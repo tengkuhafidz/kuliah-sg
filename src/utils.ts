@@ -10,9 +10,9 @@ export const fuzzySearch = (items: Kuliah[], searchTerm: string): Kuliah[] => {
     useExtendedSearch: false,
     minMatchCharLength: 3,
     shouldSort: true,
-    threshold: 0,
+    threshold: 0.3,
     location: 0,
-    distance: 0,
+    distance: 100,
     keys: ["Topic", "Speaker"],
   };
 
