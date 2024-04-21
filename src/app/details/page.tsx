@@ -3,6 +3,7 @@
 import { useSearchParams, useRouter, usePathname } from 'next/navigation'
 import { kuliahList } from "@/data";
 import { RWebShare } from "react-web-share";
+import Link from 'next/link';
 
 
 export default function Details() {
@@ -37,6 +38,11 @@ export default function Details() {
 
     return (
         <main className="bg-gray-200 min-h-screen px-4 py-8">
+            <div className='mb-6 text-sm'>
+
+                <Link href="/" className='hover:underline text-gray-500 hover:text-gray-600 text-center'>← Back to Listing Page</Link>
+            </div>
+
             <div id="list-item" className="rounded-lg border shadow py-4 px-6 mb-3 bg-white">
                 <h2 className="font-medium text-xl">{Topic}</h2>
                 <div className="text-white font-light">
@@ -45,7 +51,7 @@ export default function Details() {
                 <div className="my-1 text-gray-600">
                     <p>🗓️ {Day}{Details && `, ${Details} `}</p>
                     <p>👳🏽 {Speaker}</p>
-                    <p>📍 {Organisation}</p>
+                    <p>🕌 {Organisation}</p>
                 </div>
                 <RWebShare
                     data={{
