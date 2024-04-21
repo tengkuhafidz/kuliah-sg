@@ -29,10 +29,8 @@ export default function Details() {
 👳🏽‍♂️ ${Speaker}
 🕌 ${Organisation}`
 
-        return encodeURIComponent(text)
+        return text
     }
-
-
 
     return (
         <main className="bg-gray-200 min-h-screen px-4 py-8">
