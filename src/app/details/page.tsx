@@ -22,13 +22,16 @@ export default function Details() {
 
     const { Topic, Day, Prayer, Details, Speaker, Organisation } = kuliah!
 
+    const currentUrl = typeof window !== "undefined" ? window.location.href : "https://kuliah.sg"
+
     const getShareText = () => {
         const text = `${`☪️ Kuliah ${Prayer}: ${Topic}`.toUpperCase()}
-%0a
-%0a🗓️ ${Day}${Details && `, ${Details}`}
-%0a👳🏽‍♂️ ${Speaker}
-%0a🕌 ${Organisation}
-%0a`
+===
+🗓️ ${Day}${Details && `, ${Details}`}
+👳🏽‍♂️ ${Speaker}
+🕌 ${Organisation}
+===
+`
 
         return text
     }
@@ -48,7 +51,7 @@ export default function Details() {
                 <RWebShare
                     data={{
                         text: getShareText(),
-                        url: window.location.href
+                        url: currentUrl
                     }}
                 >
                     <button className='mt-4 bg-gray-900 text-white py-2 px-4 block w-full rounded-lg'>Share This 📲</button>
