@@ -19,7 +19,7 @@ export default function KuliahCard({ kuliah }: Props) {
         <div className="my-1 text-xs text-gray-600">
           <p>🗓️ {Day}{Details && `, ${Details}`}</p>
           <p>👳🏽 {Speaker}</p>
-          <p>📍 {Organisation}</p>
+          <p>🕌 {Organisation}</p>
         </div>
       </div>
     </Link>

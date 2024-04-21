@@ -28,7 +28,7 @@ ${`☪️ Kuliah ${Prayer}: ${Topic}`.toUpperCase()}
 
 🗓️ ${Day}${Details && `, ${Details}`}
 👳🏽‍♂️ ${Speaker}
-📍 ${Organisation}
+🕌 ${Organisation}
 
 View more: ${typeof window !== "undefined" ? window.location.href : "https://kuliah.sg"
             }
