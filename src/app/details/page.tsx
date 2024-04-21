@@ -24,10 +24,11 @@ export default function Details() {
 
     const getShareText = () => {
         const text = `${`☪️ Kuliah ${Prayer}: ${Topic}`.toUpperCase()}
-%0a%0a
+%0a
 %0a🗓️ ${Day}${Details && `, ${Details}`}
 %0a👳🏽‍♂️ ${Speaker}
-%0a🕌 ${Organisation}`
+%0a🕌 ${Organisation}
+%0a`
 
         return text
     }
@@ -47,6 +48,7 @@ export default function Details() {
                 <RWebShare
                     data={{
                         text: getShareText(),
+                        url: window.location.href
                     }}
                 >
                     <button className='mt-4 bg-gray-900 text-white py-2 px-4 block w-full rounded-lg'>Share This 📲</button>
