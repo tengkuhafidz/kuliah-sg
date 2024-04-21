@@ -23,16 +23,12 @@ export default function Details() {
     const { Topic, Day, Prayer, Details, Speaker, Organisation } = kuliah!
 
     const getShareText = () => {
-        const text = `
-${`☪️ Kuliah ${Prayer}: ${Topic}`.toUpperCase()}
+        const text = `${`☪️ Kuliah ${Prayer}: ${Topic}`.toUpperCase()}
 
 🗓️ ${Day}${Details && `, ${Details}`}
 👳🏽‍♂️ ${Speaker}
-🕌 ${Organisation}
+🕌 ${Organisation}`
 
-View more: ${typeof window !== "undefined" ? window.location.href : "https://kuliah.sg"
-            }
-    `
         return encodeURIComponent(text)
     }
 
