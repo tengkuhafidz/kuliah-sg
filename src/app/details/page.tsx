@@ -25,12 +25,11 @@ export default function Details() {
 
     const getShareText = () => {
         const text = `${`☪️ Kuliah ${Prayer}: ${Topic}`.toUpperCase()}
-%0a
-%0a🗓️ ${Day}${Details && `, ${Details}`}
-%0a👳🏽‍♂️ ${Speaker}
-%0a🕌 ${Organisation}
-%0a
-%0a
+
+🗓️ ${Day}${Details && `, ${Details}`}
+👳🏽‍♂️ ${Speaker}
+🕌 ${Organisation}
+
 `
 
         return text
