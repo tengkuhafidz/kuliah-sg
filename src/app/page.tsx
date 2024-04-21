@@ -4,7 +4,7 @@ import { kuliahList } from "@/data";
 import { Kuliah } from "@/types";
 import { fuzzySearch } from "@/utils";
 import { useState } from "react";
-import ListItem from "./components/ListItem";
+import ListItem from "./components/KuliahCard";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
@@ -52,7 +52,7 @@ export default function Home() {
     ));
   };
   return (
-    <main className="bg-gray-200 ">
+    <main className="bg-gray-200">
       <div className="p-4 ">
         <h1 className="font-bold text-xl my-2">Kuliah in Mosques</h1>
         <div>
