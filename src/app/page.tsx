@@ -52,8 +52,8 @@ export default function Home() {
     ));
   };
   return (
-    <main className="bg-gray-200">
-      <div className="p-4 ">
+    <main>
+      <div className="p-4 max-w-2xl mx-auto">
         <h1 className="font-bold text-xl my-2">Kuliah in Mosques</h1>
         <div>
           <div>
@@ -130,11 +130,13 @@ export default function Home() {
       </div>
 
       <div id="listing" className="p-4 bg-white rounded-xl">
-        {filteredResults?.length > 0 ? (
-          renderKuliahList()
-        ) : (
-          <p className="text-gray-600 py-8 text-center">No Results.</p>
-        )}
+        <div className=" max-w-2xl mx-auto">
+          {filteredResults?.length > 0 ? (
+            renderKuliahList()
+          ) : (
+            <p className="text-gray-600 py-8 text-center">No Results.</p>
+          )}
+        </div>
       </div>
     </main>
   );
