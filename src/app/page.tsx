@@ -1,6 +1,6 @@
 "use client";
 
-import { kuliahList } from "@/data";
+import { kuliahList } from "@/data/kuliah";
 import { Kuliah } from "@/types";
 import { fuzzySearch } from "@/utils";
 import { useState } from "react";
@@ -8,6 +8,7 @@ import ListItem from "./components/KuliahCard";
 
 export default function Home() {
   const [searchTerm, setSearchTerm] = useState("");
+  const [selectedMasjid, setSelectedMasjid] = useState("");
   const [selectedDay, setSelectedDay] = useState("");
   const [selectedPrayer, setSelectedPrayer] = useState("");
 
@@ -15,12 +16,12 @@ export default function Home() {
     ? fuzzySearch(kuliahList, searchTerm)
     : kuliahList;
 
-  const filterByMosque = (items: Kuliah[]) => {
-    if (!selectedPrayer) {
+  const filterByMasjid = (items: Kuliah[]) => {
+    if (!selectedMasjid) {
       return items;
     }
 
-    return items.filter((item) => item.Prayer === selectedPrayer);
+    return items.filter((item) => item.Masjid === selectedMasjid);
   };
 
   const filterByDay = (items: Kuliah[]) => {
@@ -40,7 +41,7 @@ export default function Home() {
   };
 
   const filteredResults = filterByPrayer(
-    filterByDay(filterByMosque(searchResults))
+    filterByDay(filterByMasjid(searchResults))
   );
 
   const renderKuliahList = () => {
@@ -54,7 +55,9 @@ export default function Home() {
   return (
     <main>
       <div className="p-4 max-w-2xl mx-auto">
-        <h1 className="font-bold text-xl my-2">Kuliah in Mosques</h1>
+        <h1 className="font-semibold text-2xl my-2 text-white drop-shadow">
+          Kuliah in Masjid
+        </h1>
         <div>
           <div>
             <label
@@ -94,6 +97,18 @@ export default function Home() {
             <div className="flex gap-2 my-2 text-xs">
               <div>
                 <select
+                  id="Masjid"
+                  className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1.5"
+                  onChange={(e) => setSelectedMasjid(e.target.value)}
+                >
+                  <option value="">Any Masjid</option>
+                  <option value="Annur">Annur</option>
+                  <option value="An-Nahdah">An-Nahdah</option>
+                </select>
+              </div>
+
+              <div>
+                <select
                   id="Day"
                   className="bg-gray-50 border border-gray-300 text-gray-900 rounded-lg focus:ring-blue-500 focus:border-blue-500 p-1.5"
                   onChange={(e) => setSelectedDay(e.target.value)}
@@ -129,7 +144,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div id="listing" className="p-4 bg-white rounded-xl">
+      <div id="listing" className="p-4 bg-white rounded-t-xl min-h-[86vh]">
         <div className=" max-w-2xl mx-auto">
           {filteredResults?.length > 0 ? (
             renderKuliahList()

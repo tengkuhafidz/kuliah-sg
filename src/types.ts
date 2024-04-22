@@ -1,8 +1,10 @@
 export interface Kuliah {
-  Organisation: string;
+  Id: string;
+  Masjid: string;
   Day: string;
   Prayer: string;
-  Details: string;
+  Timing?: string | null;
+  Location?: string | null;
   Topic: string;
   Speaker: string;
 }

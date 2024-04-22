@@ -6,17 +6,16 @@ interface Props {
 }
 
 export default function KuliahCard({ kuliah }: Props) {
-  const { Organisation, Day, Prayer, Details, Topic, Speaker } = kuliah;
+  const { Id, Masjid, Day, Prayer, Timing, Location, Topic, Speaker } = kuliah;
   return (
     <Link
       href={{
-        pathname: "details",
-        query: { Organisation, Prayer, Day, Details },
+        pathname: Id,
       }}
     >
       <div id="list-item" className="rounded-lg border shadow py-2 px-4 mb-3">
         <div className="text-white font-light">
-          <span className="bg-gray-500 text-xs px-1 rounded mr-1">
+          <span className="bg-teal-600 text-xs px-1 rounded mr-1">
             Kuliah {Prayer}
           </span>
         </div>
@@ -25,9 +24,12 @@ export default function KuliahCard({ kuliah }: Props) {
         <div className="my-2 text-xs text-gray-600">
           <p>
             🗓️ {Day}
-            {Details && `, ${Details}`}
+            {Timing && `, ${Timing}`}
           </p>
-          <p>🕌 {Organisation}</p>
+          <p>
+            🕌 Masjid {Masjid}
+            {Location && `, ${Location}`}
+          </p>
         </div>
       </div>
     </Link>
