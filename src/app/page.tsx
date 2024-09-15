@@ -62,7 +62,7 @@ export default function Home() {
           <div>
             <label
               htmlFor="Search"
-              className="mb-2 text-sm font-medium sr-only "
+              className="mb-2 text-sm font-medium sr-only"
             >
               Search
             </label>

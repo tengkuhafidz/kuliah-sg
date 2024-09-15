@@ -43,7 +43,7 @@ export default function KuliahDetails({ params }: { params: { id: string } }) {
         className="rounded-lg border shadow py-4 px-6 mb-3 bg-white"
       >
         <div className="text-white font-light my-1">
-          <span className="bg-teal-600 px-1 rounded mr-1">Kuliah {Prayer}</span>
+          <span className="bg-teal-700 px-1 rounded mr-1">Kuliah {Prayer}</span>
         </div>
         <h2 className="font-medium text-xl">{Topic}</h2>
         <p className=" text-gray-600 text-sm">By {Speaker}</p>
